@@ -4,7 +4,9 @@ QT += core qml quick widgets network
 
 SOURCES += main.cpp \
     commander.cpp
-#SOURCES += main.qml
+lupdate_only{
+    SOURCES += *.qml
+}
 
 RESOURCES += qml.qrc
     #config.ini
@@ -17,4 +19,4 @@ include(deployment.pri)
 
 HEADERS += \
     commander.h
-TRANSLATIONS += translate.ts
+TRANSLATIONS = zh_CN.ts

@@ -19,7 +19,7 @@ ApplicationWindow {
         anchors.fill: parent
         Tab{
             anchors.margins: 4
-            title: qsTr("Server")
+            title: qsTr("Sender")
             ColumnLayout{
                 anchors.margins: 2
                 anchors.fill: parent
@@ -66,12 +66,12 @@ ApplicationWindow {
         }
         Tab{
             anchors.margins: 4
-            title: qsTr("Client")
+            title: qsTr("Receiver")
             ColumnLayout{
                 anchors.margins: 2
                 Item { Layout.fillHeight: true}
                 RowLayout{
-                    Label{ text:qsTr("Port")}
+                    Label{ text:qsTr("Port:")}
                     TextField{ id:client_port; text:commander.port()}
                 }
                 RowLayout{
