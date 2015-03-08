@@ -26,7 +26,11 @@ ApplicationWindow {
                 RowLayout{
                     Layout.fillWidth: true
                     Label{ text:qsTr("Port:")}
-                    TextField{ id:server_port; text:commander.port()}
+                    TextField{
+                        id:server_port
+                        validator: IntValidator{bottom: 0;top:65535}
+                        text:commander.port()
+                    }
                 }
                 ColumnLayout{
                     Layout.fillHeight: true
@@ -72,7 +76,11 @@ ApplicationWindow {
                 Item { Layout.fillHeight: true}
                 RowLayout{
                     Label{ text:qsTr("Port:")}
-                    TextField{ id:client_port; text:commander.port()}
+                    TextField{
+                        id:client_port
+                        validator: IntValidator{bottom: 0;top:65535}
+                        text:commander.port()
+                    }
                 }
                 RowLayout{
                     Button{

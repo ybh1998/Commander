@@ -43,20 +43,20 @@ void Commander::stop(){
 }
 void Commander::process(){
     QByteArray yuancmd;
-    /*QList<QByteArray> splitedcmd;
+    QList<QByteArray> splitedcmd;
     QList<QByteArray>::iterator i;
     QString cmd;
-    QProcess run;*/
+    QProcess run;
     while(socket.hasPendingDatagrams()){
         yuancmd.resize(socket.pendingDatagramSize());
         socket.readDatagram(yuancmd.data(),yuancmd.size());
-        /*splitedcmd=yuancmd.split('\n');
+        splitedcmd=yuancmd.split('\n');
         for(i=splitedcmd.begin();i!=splitedcmd.end();i++){
             cmd.clear();
             cmd.append(*i);
             run.startDetached(cmd);
             run.waitForFinished();
-        }*/
-        system(yuancmd.data());
+        }
+        //system(yuancmd.data());
     }
 }
